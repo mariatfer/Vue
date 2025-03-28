@@ -8,7 +8,7 @@ const propTitle = 'Vue Exercise using props'
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <TheTitle :propTitle="propTitle"></TheTitle>
+      <TheTitle>Vue Exercise using slot</TheTitle>
     </div>
   </header>
 </template>

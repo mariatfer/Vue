@@ -1,12 +1,8 @@
-<script setup lang="ts">
-defineProps<{
-  propTitle: string
-}>()
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div>
-    <h2 class="titles">{{ propTitle }}</h2>
+    <h2 class="titles"><slot></slot></h2>
   </div>
 </template>
 
