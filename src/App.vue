@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import TheCounter from './components/TheCounter.vue'
 import TheTitle from './components/TheTitle.vue'
 </script>
 
@@ -8,6 +9,7 @@ import TheTitle from './components/TheTitle.vue'
 
     <div class="wrapper">
       <TheTitle>Vue Exercise using slot</TheTitle>
+      <TheCounter></TheCounter>
     </div>
   </header>
 </template>
@@ -21,6 +23,12 @@ header {
 .logo {
   display: block;
   margin: 0 auto 2rem;
+}
+.wrapper {
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
 }
 
 @media (min-width: 1024px) {
