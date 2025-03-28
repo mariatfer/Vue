@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import TheTitle from './components/TheTitle.vue'
-const propTitle = 'Vue Exercise using props'
 </script>
 
 <template>
