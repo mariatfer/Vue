@@ -8,7 +8,7 @@ import TheTitle from './components/TheTitle.vue'
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <TheTitle>Vue Exercise using slot</TheTitle>
+      <TheTitle>Vue Exercise 6</TheTitle>
       <TheCounter></TheCounter>
     </div>
   </header>
@@ -23,12 +23,6 @@ header {
 .logo {
   display: block;
   margin: 0 auto 2rem;
-}
-.wrapper {
-  display: flex;
-  /* justify-content: center; */
-  flex-direction: column;
-  align-items: center;
 }
 
 @media (min-width: 1024px) {
