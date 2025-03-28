@@ -1,7 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineProps<{
+  propTitle: string
+}>()
+</script>
 
 <template>
-  <div><h2 class="titles">Vue Exercise 2</h2></div>
+  <div>
+    <h2 class="titles">{{ propTitle }}</h2>
+  </div>
 </template>
 
 <style scoped>

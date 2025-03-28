@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import TheTitle from './components/TheTitle.vue'
+const propTitle = 'Vue Exercise using props'
 </script>
 
 <template>
@@ -7,7 +8,7 @@ import TheTitle from './components/TheTitle.vue'
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <TheTitle></TheTitle>
+      <TheTitle :propTitle="propTitle"></TheTitle>
     </div>
   </header>
 </template>
