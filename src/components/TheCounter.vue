@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import { useCounter } from '@/composables/useCounter'
-import TheTitle from '@/components/TheTitle.vue'
 
 const { count, increment, decrement, isCountAboveZero, isCountBelowTen } = useCounter()
 </script>
 
 <template>
-  <div class="counter">
-    <TheTitle>Counter: {{ count }}</TheTitle>
+  <div :class="{'counter__active': count === 10 }" class="counter">
+    <h2>Counter: {{ count }}</h2>
     <button class="counter__button" @click="increment" v-if="isCountBelowTen()">Increment</button>
     <button class="counter__button" @click="decrement" v-if="isCountAboveZero()">Decrement</button>
   </div>
@@ -19,6 +18,9 @@ const { count, increment, decrement, isCountAboveZero, isCountBelowTen } = useCo
   flex-direction: column;
   align-items: center;
   gap: 0.3em;
+}
+.counter__active {
+  color: green;
 }
 .counter__button {
   min-width: 5.3125rem;
