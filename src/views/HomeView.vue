@@ -2,6 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import TheTitle from '@/components/TheTitle.vue'
 import TheCounter from '@/components/TheCounter.vue'
+import ParentComponent from '@/components/ParentComponent.vue'
 </script>
 
 <template>
@@ -16,7 +17,9 @@ import TheCounter from '@/components/TheCounter.vue'
       <TheCounter></TheCounter>
     </div>
   </header>
-  <main></main>
+  <main>
+    <ParentComponent />
+  </main>
 
   <RouterView />
 </template>
