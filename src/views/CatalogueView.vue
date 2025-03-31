@@ -2,7 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import { mockProducts } from '@/data/mock'
 import TheTitle from '@/components/TheTitle.vue'
-import ProductCard from '@/components/ProductCard.vue';
+import ProductCard from '@/components/ProductCard.vue'
 </script>
 
 <template>
@@ -17,9 +17,8 @@ import ProductCard from '@/components/ProductCard.vue';
     </div>
   </header>
   <main class="main">
-    <!-- <TheTitle>Products</TheTitle> -->
     <section class="products">
-      <ProductCard v-for="product in mockProducts" :key="product.id"></ProductCard>
+      <ProductCard v-for="product in mockProducts" :key="product.id" v-bind="product"></ProductCard>
     </section>
   </main>
 
