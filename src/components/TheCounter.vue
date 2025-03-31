@@ -1,25 +1,8 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import TheTitle from './TheTitle.vue'
+import { useCounter } from '@/composables/useCounter'
+import TheTitle from '@/components/TheTitle.vue'
 
-const count = ref(0)
-const NUMBER_ZERO = 0
-const NUMBER_TEN = 10
-
-function increment() {
-  count.value++
-}
-
-function decrement() {
-  count.value--
-}
-
-function isCountAboveZero() {
-  return count.value > NUMBER_ZERO
-}
-function isCountBelowTen() {
-  return count.value < NUMBER_TEN
-}
+const { count, increment, decrement, isCountAboveZero, isCountBelowTen } = useCounter()
 </script>
 
 <template>
