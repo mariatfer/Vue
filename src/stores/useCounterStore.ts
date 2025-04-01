@@ -22,19 +22,22 @@ export const useCounterStore = defineStore('counter', () => {
   const countMultiplied = computed(() => {
     return count.value * 2
   })
-  
+
   const message = ref('')
-  watch(count, (newCount) => {
-    console.log(newCount)
-    if (count.value === 0) {
-      message.value = 'Estás en el valor mínimo'
-    } else if (count.value === 10) {
-      message.value = 'Estás en el valor máximo'
-    } else {
-      message.value = 'Estás en los parámetros adecuados'
-    }
-  }, { immediate: true })
-  
+  watch(
+    count,
+    () => {
+      if (count.value === 0) {
+        message.value = 'Estás en el valor mínimo'
+      } else if (count.value === 10) {
+        message.value = 'Estás en el valor máximo'
+      } else {
+        message.value = 'Estás en los parámetros adecuados'
+      }
+    },
+    { immediate: true },
+  )
+
   return {
     count,
     increment,
@@ -42,6 +45,6 @@ export const useCounterStore = defineStore('counter', () => {
     isCountAboveZero,
     isCountBelowTen,
     countMultiplied,
-    message
+    message,
   }
 })
