@@ -1,32 +1,15 @@
 <script setup lang="ts">
-import { useCounter } from '@/composables/useCounter'
-import { ref, computed, watch } from 'vue'
+import { useCounterStore } from '@/stores/useCounterStore';
 
-const { count, increment, decrement, isCountAboveZero, isCountBelowTen } = useCounter()
-
-const countMultiplied = computed(() => {
-  return count.value * 2
-})
-
-const message = ref('')
-watch(count, (newCount) => {
-  console.log(newCount)
-  if (count.value === 0) {
-    message.value = 'Estás en el valor mínimo'
-  } else if (count.value === 10) {
-    message.value = 'Estás en el valor máximo'
-  } else {
-    message.value = 'Estás en los parámetros adecuados'
-  }
-}, { immediate: true })
+const counter = useCounterStore()
 </script>
 
 <template>
-  <div :class="{ counter__active: count === 10 }" class="counter">
-    <h2>Counter: {{ count }}. {{ message }}</h2>
-    <h2>Counter * 2: {{ countMultiplied }}</h2>
-    <button class="counter__button" @click="increment" v-if="isCountBelowTen()">Increment</button>
-    <button class="counter__button" @click="decrement" v-if="isCountAboveZero()">Decrement</button>
+  <div :class="{ counter__active: counter.count === 10 }" class="counter">
+    <h2>Counter: {{ counter.count }}. {{ counter.message }}</h2>
+    <h2>Counter * 2: {{ counter.countMultiplied }}</h2>
+    <button class="counter__button" @click="counter.increment" v-if="counter.isCountBelowTen()">Increment</button>
+    <button class="counter__button" @click="counter.decrement" v-if="counter.isCountAboveZero()">Decrement</button>
   </div>
 </template>
 

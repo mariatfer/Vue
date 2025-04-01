@@ -3,6 +3,7 @@ import { RouterLink, RouterView } from 'vue-router'
 import { mockProducts } from '@/data/mock'
 import TheTitle from '@/components/TheTitle.vue'
 import ProductCard from '@/components/ProductCard.vue'
+import TheCounter from '@/components/TheCounter.vue'
 </script>
 
 <template>
@@ -20,6 +21,7 @@ import ProductCard from '@/components/ProductCard.vue'
     <section class="products">
       <ProductCard v-for="product in mockProducts" :key="product.id" v-bind="product"></ProductCard>
     </section>
+    <TheCounter></TheCounter>
   </main>
 
   <RouterView />
@@ -47,6 +49,8 @@ import ProductCard from '@/components/ProductCard.vue'
 }
 .main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 </style>
